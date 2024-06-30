@@ -1,0 +1,27 @@
+{% extends "seguridad/layout/base.html" %}
+
+{% block title %}Login{% endblock %}
+{% block header %}Ingresar{% endblock %}
+{% block content %}
+
+
+    <div class="d-grid gap-2 col-md-6 mx-auto">
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="id_username" class="form-label">Username</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div>
+                <label for="id_password1" class="form-label">Password</label>
+                {{ form.password }}
+                {{ form.password.errors }}
+            </div>
+
+            <div class='d-grid gap-2 col-md-6 mx-auto'>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+        </form>
+    </div>
+    {% endblock %}
